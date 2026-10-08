@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Rápida no WhatsApp - Protocolo Quebra-Vácuo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #25D366; /* WhatsApp Green */
+            --primary-dark: #128C7E;
+            --dark: #111111;
+            --light: #f9f9f9;
+            --text: #333333;
+            --alert: #ff4757;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER / HERO SECTION */
+        header {
+            background-color: #ffffff;
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 2px solid #eaeaea;
+        }
+
+        .headline {
+            font-size: 2.8rem;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .headline span { color: var(--primary-dark); }
+
+        .subheadline {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-decoration: none;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(18, 140, 126, 0.4);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        /* PROBLEM / AGITATION SECTION */
+        .section-dor {
+            padding: 60px 0;
+            background-color: var(--dark);
+            color: #fff;
+            text-align: center;
+        }
+
+        .dor-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--alert);
+        }
+
+        .dor-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* SOLUTION SECTION */
+        .section-solucao {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .solucao-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: var(--dark);
+        }
+
+        .bullets {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .bullets li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .bullets li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* OFFER SECTION */
+        .section-oferta {
+            padding: 60px 0;
+            background-color: var(--light);
+            text-align: center;
+            border-top: 2px dashed #ccc;
+        }
+
+        .preco-ancora {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        .preco-real {
+            font-size: 4rem;
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            margin: 10px 0;
+        }
+
+        /* GUARANTEE */
+        .garantia {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fcf8e3;
+            border: 1px solid #faebcc;
+            border-radius: 8px;
+            color: #8a6d3b;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .headline { font-size: 2rem; }
+            .subheadline { font-size: 1.1rem; }
+            .cta-btn { font-size: 1.1rem; width: 100%; padding: 15px 20px; }
+            .preco-real { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="headline">O 'Interruptor Oculto' da Venda: Como fazer o cliente que te deu vácuo <span>implorar para comprar hoje.</span></h1>
+            <p class="subheadline">Copie e cole os exatos Roteiros de WhatsApp validados por Inteligência Artificial e pare de perder vendas simplesmente por não saber o que responder.</p>
+            <a href="#comprar" class="cta-btn">SIM! QUERO DESBLOQUEAR MEUS ROTEIROS</a>
+        </div>
+    </header>
+
+    <section class="section-dor">
+        <div class="container">
+            <h2 class="dor-title">O SEU CELULAR APITA, MAS O CAIXA CONTINUA VAZIO.</h2>
+            <p class="dor-text">Você passa horas respondendo clientes no WhatsApp. Eles perguntam o preço. Você responde... e o silêncio mortal acontece. O temido "vácuo".</p>
+            <p class="dor-text">Isso não acontece porque seu produto é ruim ou caro. A neurociência explica: o seu texto ativa a "dor do pagamento" no cérebro do cliente em vez de ativar o "desejo de posse".</p>
+            <p class="dor-text">Se você continuar mandando o preço "nu", você continuará trabalhando de graça.</p>
+        </div>
+    </section>
+
+    <section class="section-solucao">
+        <div class="container">
+            <h2 class="solucao-title">O PROTOCOLO "CAIXA RÁPIDA"</h2>
+            <p>Este não é um cursinho de vendas que vai tomar 20 horas da sua vida. Você não tem tempo para isso. O **Caixa Rápida no WhatsApp** é uma ferramenta de **Control C + Control V**.</p>
+            
+            <ul class="bullets">
+                <li><strong>O "Sanduíche de Preço" secreto:</strong> Como ancorar o valor na mente do cliente antes de dar o preço real (sem enganar ninguém).</li>
+                <li><strong>O Gatilho da Aversão à Perda:</strong> O roteiro exato para fazer o cliente parar de "pensar" e passar o cartão na mesma hora.</li>
+                <li><strong>O Efeito Zeigarnik:</strong> Como ressuscitar conversas mortas há dias sem parecer chato ou desesperado por dinheiro.</li>
+                <li><strong>Engenharia de Prompt:</strong> Bônus de IA com o código exato para você jogar no ChatGPT e criar ofertas infinitas.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section-oferta" id="comprar">
+        <div class="container">
+            <h2>Libere o seu acesso imediato</h2>
+            <p>Se um único roteiro deste guia salvar uma venda hoje, ele já se pagou múltiplas vezes.</p>
+            
+            <div style="margin: 30px 0;">
+                <p class="preco-ancora">De R$ 97,00 por apenas:</p>
+                <h1 class="preco-real">R$ 19,90</h1>
+                <p>ou 2x no cartão de crédito.</p>
+            </div>
+
+            <a href="https://pay.kiwify.com.br/BytTjJE" class="cta-btn">QUERO ACESSAR OS ROTEIROS AGORA</a>
+
+            <div class="garantia">
+                <strong>🛡️ Risco Absolutamente Zero!</strong>
+                <p>Você tem 7 dias de garantia incondicional. Se você copiar, colar os roteiros e não sentir que suas conversas melhoraram, devolvemos 100% do seu dinheiro com 1 clique. Você não perde nada.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 20px; font-size: 0.9rem; color: #888;">
+        <p>Este site não faz parte do Facebook Inc. ou Google Inc.</p>
+        <p>&copy; 2026 Caixa Rápida no WhatsApp. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
