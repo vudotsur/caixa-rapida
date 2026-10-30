@@ -35,20 +35,35 @@
     .highlight { color: var(--primary); }
     .hero-img { width: 100%; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 20px; display: block; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
     .alert-box { background: rgba(239, 68, 68, 0.09); border-left: 4px solid var(--danger); padding: 14px; border-radius: 6px; margin-bottom: 22px; font-size: 14px; color: #fca5a5; line-height: 1.5; }
-    .content-card { background: var(--card); border-radius: 14px; padding: 24px; border: 1px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+    
+    .content-card { background: var(--card); border-radius: 14px; padding: 24px; border: 1px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.3); margin-bottom: 20px; }
     .content-card h2 { font-size: 19px; margin-bottom: 16px; font-weight: 700; color: #fff; }
     .feature-list { list-style: none; margin-bottom: 24px; }
     .feature-list li { margin-bottom: 14px; display: flex; align-items: flex-start; font-size: 15px; color: #cbd5e1; }
     .feature-list li .check { color: var(--primary); margin-right: 10px; font-weight: 900; font-size: 17px; }
+    
+    /* NICHE PILLS */
+    .niche-box { background: rgba(15, 23, 42, 0.6); padding: 14px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; font-size: 13px; color: var(--muted); }
+    .niche-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .pill { background: rgba(56, 189, 248, 0.12); color: var(--accent); padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; border: 1px solid rgba(56, 189, 248, 0.25); }
+
     .price-box { text-align: center; background: rgba(11, 15, 25, 0.7); padding: 20px; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 20px; }
     .old-price { font-size: 14px; color: var(--muted); text-decoration: line-through; }
     .new-price { font-size: 40px; font-weight: 900; color: #10b981; margin: 4px 0; }
     .price-sub { font-size: 13px; color: var(--muted); }
     .btn-checkout { display: block; width: 100%; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #fff; text-align: center; text-decoration: none; padding: 18px; font-size: 18px; font-weight: 800; border-radius: 10px; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); text-transform: uppercase; letter-spacing: 0.03em; }
     .btn-checkout:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5); }
-    .footer-guarantee { text-align: center; margin-top: 18px; font-size: 13px; color: var(--muted); display: flex; justify-content: center; align-items: center; gap: 8px; }
     
-    /* COMPLIANCE & LEGAL SECTION (GOOGLE ADS AUDIT REQUIREMENT) */
+    .delivery-badge { display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(16, 185, 129, 0.08); border: 1px dashed rgba(16, 185, 129, 0.3); padding: 10px; border-radius: 8px; margin-top: 14px; font-size: 13px; color: #a7f3d0; text-align: center; }
+    .footer-guarantee { text-align: center; margin-top: 14px; font-size: 13px; color: var(--muted); display: flex; justify-content: center; align-items: center; gap: 8px; }
+    
+    /* FAQ ACCORDION */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question { font-size: 15px; font-weight: 700; color: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-answer { display: none; font-size: 14px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+    
+    /* COMPLIANCE & LEGAL SECTION */
     .legal-footer { margin-top: 32px; border-top: 1px solid var(--border); padding-top: 20px; font-size: 11px; color: #64748b; line-height: 1.6; text-align: center; }
     .legal-links { display: flex; justify-content: center; gap: 14px; margin-bottom: 12px; flex-wrap: wrap; }
     .legal-links a { color: var(--muted); text-decoration: underline; cursor: pointer; }
@@ -86,10 +101,22 @@
         <li><span class="check">✓</span> <div><strong>Bônus de IA:</strong> Prompt de Engenharia de Comando para ChatGPT gerar respostas personalizadas para qualquer nicho em 30 segundos.</div></li>
       </ul>
 
+      <div class="niche-box">
+        <strong>Para quem este protocolo foi desenhado:</strong>
+        <div class="niche-pills">
+          <span class="pill">Lojas & E-commerces</span>
+          <span class="pill">Clínicas & Consultórios</span>
+          <span class="pill">Corretores de Imóveis</span>
+          <span class="pill">Prestadores de Serviços</span>
+          <span class="pill">Profissionais Liberais</span>
+          <span class="pill">Infoprodutores</span>
+        </div>
+      </div>
+
       <div class="price-box">
         <div class="old-price">De R$ 67,00 por apenas</div>
         <div class="new-price">R$ 19,90</div>
-        <div class="price-sub">Pagamento único via Pix ou Cartão • Acesso imediato em PDF</div>
+        <div class="price-sub">Pagamento único via Pix ou Cartão • Acesso vitalício ao PDF</div>
       </div>
 
       <!-- LINK OFICIAL DO CHECKOUT KIWIFY -->
@@ -97,26 +124,81 @@
         QUERO O PROTOCOLO POR R$ 19,90
       </a>
 
+      <div class="delivery-badge">
+        ⚡ <strong>Entrega Imediata:</strong> Arquivo PDF enviado no seu e-mail e WhatsApp em menos de 60 segundos após o pagamento.
+      </div>
+
       <div class="footer-guarantee">
         <span>🔒</span> Pagamento Seguro via Kiwify • Garantia Incondicional de 7 Dias
       </div>
+    </div>
 
-      <!-- COMPLIANCE & POLICIES GOOGLE ADS -->
-      <div class="legal-footer">
-        <div class="legal-links">
-          <a onclick="openModal('terms')">Termos de Uso</a>
-          <a onclick="openModal('privacy')">Política de Privacidade (LGPD)</a>
-          <a onclick="openModal('contact')">Contato & Suporte</a>
+    <!-- SEÇÃO DE FAQ (PERGUNTAS FREQUENTES CRO) -->
+    <div class="content-card">
+      <h2 style="margin-bottom: 12px;">Perguntas Frequentes (Tire suas dúvidas):</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(1)">
+          1. Preciso entender de tecnologia ou inteligência artificial?
+          <span id="faq-icon-1">+</span>
         </div>
+        <div class="faq-answer" id="faq-ans-1">
+          Não! O protocolo foi construído em formato de copiar e colar. Você recebe os textos exatos para cadastrar nas Respostas Rápidas do seu próprio WhatsApp Business.
+        </div>
+      </div>
 
-        <div class="disclaimer-box">
-          <strong>Aviso Legal & Isenção de Vínculo:</strong> Este site e o produto digital ofertado não possuem nenhuma associação institucional, vínculo societário, patrocínio ou endosso por parte de WhatsApp Inc., Meta Platforms, Inc. ou Google LLC. "WhatsApp" é uma marca registrada de propriedade exclusiva da Meta Platforms, Inc. Os resultados decorrentes do aprendizado deste protocolo dependem estritamente da aplicação individual e das práticas comerciais de cada negócio.
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(2)">
+          2. Funciona para o meu tipo de produto ou serviço?
+          <span id="faq-icon-2">+</span>
         </div>
+        <div class="faq-answer" id="faq-ans-2">
+          Sim. A psicologia do "vácuo" e a dor do preço são universais em qualquer cérebro humano. Se você vende pelo WhatsApp (roupas, consultorias, imóveis, serviços ou produtos digitais), o método se aplica no mesmo instante.
+        </div>
+      </div>
 
-        <div style="margin-top: 14px;">
-          Felipe Borges Linares • Londrina, PR • Suporte oficial: feblinares@gmail.com<br>
-          © 2026 Todos os direitos reservados. Compra processada com criptografia de ponta a ponta pela plataforma Kiwify.
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(3)">
+          3. Como recebo o material após a compra?
+          <span id="faq-icon-3">+</span>
         </div>
+        <div class="faq-answer" id="faq-ans-3">
+          Assim que o pagamento no Pix ou Cartão for aprovado pela Kiwify, você recebe o link de download direto no seu e-mail cadastrado e também por mensagem no WhatsApp para salvar no celular ou computador.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(4)">
+          4. E se eu não gostar ou achar que não serviu?
+          <span id="faq-icon-4">+</span>
+        </div>
+        <div class="faq-answer" id="faq-ans-4">
+          Você tem 7 dias corridos de garantia incondicional protegida por lei. Se por qualquer motivo você não ficar 100% satisfeito, basta um único clique na Kiwify para receber todo o seu dinheiro de volta sem burocracia.
+        </div>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <a href="https://pay.kiwify.com.br/BytTjJE" class="btn-checkout" style="padding: 14px; font-size: 16px;" target="_blank" rel="noopener">
+          SIM! QUERO MEUS ROTEIROS POR R$ 19,90
+        </a>
+      </div>
+    </div>
+
+    <!-- COMPLIANCE & POLICIES GOOGLE ADS -->
+    <div class="legal-footer">
+      <div class="legal-links">
+        <a onclick="openModal('terms')">Termos de Uso</a>
+        <a onclick="openModal('privacy')">Política de Privacidade (LGPD)</a>
+        <a onclick="openModal('contact')">Contato & Suporte</a>
+      </div>
+
+      <div class="disclaimer-box">
+        <strong>Aviso Legal & Isenção de Vínculo:</strong> Este site e o produto digital ofertado não possuem nenhuma associação institucional, vínculo societário, patrocínio ou endosso por parte de WhatsApp Inc., Meta Platforms, Inc. ou Google LLC. "WhatsApp" é uma marca registrada de propriedade exclusiva da Meta Platforms, Inc. Os resultados decorrentes do aprendizado deste protocolo dependem estritamente da aplicação individual e das práticas comerciais de cada negócio.
+      </div>
+
+      <div style="margin-top: 14px;">
+        Felipe Borges Linares • Londrina, PR • Suporte oficial: feblinares@gmail.com<br>
+        © 2026 Todos os direitos reservados. Compra processada com criptografia de ponta a ponta pela plataforma Kiwify.
       </div>
     </div>
   </div>
@@ -153,6 +235,17 @@
   </div>
 
   <script>
+    function toggleFaq(num) {
+      var ans = document.getElementById('faq-ans-' + num);
+      var icon = document.getElementById('faq-icon-' + num);
+      if (ans.style.display === 'block') {
+        ans.style.display = 'none';
+        icon.innerText = '+';
+      } else {
+        ans.style.display = 'block';
+        icon.innerText = '-';
+      }
+    }
     function openModal(id) {
       document.getElementById('modal-' + id).style.display = 'flex';
     }
