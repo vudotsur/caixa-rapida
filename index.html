@@ -1,254 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caixa Rápida no WhatsApp - Protocolo Quebra-Vácuo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #25D366; /* WhatsApp Green */
-            --primary-dark: #128C7E;
-            --dark: #111111;
-            --light: #f9f9f9;
-            --text: #333333;
-            --alert: #ff4757;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caixa Rápida no WhatsApp | O Protocolo de Neuromarketing e IA</title>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18546965327"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+    gtag('config', 'AW-18546965327');
+  </script>
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* HEADER / HERO SECTION */
-        header {
-            background-color: #ffffff;
-            padding: 60px 0 40px;
-            text-align: center;
-            border-bottom: 2px solid #eaeaea;
-        }
-
-        .headline {
-            font-size: 2.8rem;
-            color: var(--dark);
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .headline span { color: var(--primary-dark); }
-
-        .subheadline {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #fff;
-            font-size: 1.3rem;
-            font-weight: 800;
-            text-decoration: none;
-            padding: 20px 40px;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-
-        .cta-btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(18, 140, 126, 0.4);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        /* PROBLEM / AGITATION SECTION */
-        .section-dor {
-            padding: 60px 0;
-            background-color: var(--dark);
-            color: #fff;
-            text-align: center;
-        }
-
-        .dor-title {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--alert);
-        }
-
-        .dor-text {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        /* SOLUTION SECTION */
-        .section-solucao {
-            padding: 60px 0;
-            background-color: #fff;
-        }
-
-        .solucao-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            color: var(--dark);
-        }
-
-        .bullets {
-            list-style: none;
-            margin-bottom: 40px;
-        }
-
-        .bullets li {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .bullets li::before {
-            content: '✅';
-            position: absolute;
-            left: 0;
-            top: 2px;
-        }
-
-        /* OFFER SECTION */
-        .section-oferta {
-            padding: 60px 0;
-            background-color: var(--light);
-            text-align: center;
-            border-top: 2px dashed #ccc;
-        }
-
-        .preco-ancora {
-            text-decoration: line-through;
-            color: #888;
-            font-size: 1.2rem;
-        }
-
-        .preco-real {
-            font-size: 4rem;
-            color: var(--dark);
-            font-family: 'Montserrat', sans-serif;
-            margin: 10px 0;
-        }
-
-        /* GUARANTEE */
-        .garantia {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #fcf8e3;
-            border: 1px solid #faebcc;
-            border-radius: 8px;
-            color: #8a6d3b;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .headline { font-size: 2rem; }
-            .subheadline { font-size: 1.1rem; }
-            .cta-btn { font-size: 1.1rem; width: 100%; padding: 15px 20px; }
-            .preco-real { font-size: 3rem; }
-        }
-    </style>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1816242909404337');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1816242909404337&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #151e32;
+      --border: #24324f;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --accent: #38bdf8;
+      --danger: #ef4444;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); display: flex; justify-content: center; padding: 24px 14px; line-height: 1.5; }
+    .container { max-width: 550px; width: 100%; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.12); color: var(--primary); padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 16px; border: 1px solid rgba(16, 185, 129, 0.25); }
+    h1 { font-size: 27px; line-height: 1.25; font-weight: 800; margin-bottom: 14px; letter-spacing: -0.02em; }
+    .highlight { color: var(--primary); }
+    .hero-img { width: 100%; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 20px; display: block; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .alert-box { background: rgba(239, 68, 68, 0.09); border-left: 4px solid var(--danger); padding: 14px; border-radius: 6px; margin-bottom: 22px; font-size: 14px; color: #fca5a5; line-height: 1.5; }
+    .content-card { background: var(--card); border-radius: 14px; padding: 24px; border: 1px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+    .content-card h2 { font-size: 19px; margin-bottom: 16px; font-weight: 700; color: #fff; }
+    .feature-list { list-style: none; margin-bottom: 24px; }
+    .feature-list li { margin-bottom: 14px; display: flex; align-items: flex-start; font-size: 15px; color: #cbd5e1; }
+    .feature-list li .check { color: var(--primary); margin-right: 10px; font-weight: 900; font-size: 17px; }
+    .price-box { text-align: center; background: rgba(11, 15, 25, 0.7); padding: 20px; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 20px; }
+    .old-price { font-size: 14px; color: var(--muted); text-decoration: line-through; }
+    .new-price { font-size: 40px; font-weight: 900; color: #10b981; margin: 4px 0; }
+    .price-sub { font-size: 13px; color: var(--muted); }
+    .btn-checkout { display: block; width: 100%; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #fff; text-align: center; text-decoration: none; padding: 18px; font-size: 18px; font-weight: 800; border-radius: 10px; transition: transform 0.15s, box-shadow 0.15s; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); text-transform: uppercase; letter-spacing: 0.03em; }
+    .btn-checkout:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5); }
+    .footer-guarantee { text-align: center; margin-top: 18px; font-size: 13px; color: var(--muted); display: flex; justify-content: center; align-items: center; gap: 8px; }
+    .author-info { margin-top: 24px; text-align: center; font-size: 12px; color: #64748b; border-top: 1px solid var(--border); padding-top: 16px; }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <div class="badge">
+      🧠 PROTOCOLO DE NEUROMARKETING & IA • PEQUENOS NEGÓCIOS
+    </div>
 
-    <header>
-        <div class="container">
-            <h1 class="headline">O 'Interruptor Oculto' da Venda: Como fazer o cliente que te deu vácuo <span>implorar para comprar hoje.</span></h1>
-            <p class="subheadline">Copie e cole os exatos Roteiros de WhatsApp validados por Inteligência Artificial e pare de perder vendas simplesmente por não saber o que responder.</p>
-            <a href="#comprar" class="cta-btn">SIM! QUERO DESBLOQUEAR MEUS ROTEIROS</a>
-        </div>
-    </header>
+    <h1>Descubra Por Que o Cliente Pergunta o Preço e Some — E o <span class="highlight">Roteiro Exato</span> Para Fechar</h1>
 
-    <section class="section-dor">
-        <div class="container">
-            <h2 class="dor-title">O SEU CELULAR APITA, MAS O CAIXA CONTINUA VAZIO.</h2>
-            <p class="dor-text">Você passa horas respondendo clientes no WhatsApp. Eles perguntam o preço. Você responde... e o silêncio mortal acontece. O temido "vácuo".</p>
-            <p class="dor-text">Isso não acontece porque seu produto é ruim ou caro. A neurociência explica: o seu texto ativa a "dor do pagamento" no cérebro do cliente em vez de ativar o "desejo de posse".</p>
-            <p class="dor-text">Se você continuar mandando o preço "nu", você continuará trabalhando de graça.</p>
-        </div>
-    </section>
+    <img src="https://aws-assets.kiwify.com.br/LH6XiPCALwwOBfH/kiwify_product_cover_1791494765838_0c2413cb864942e0be3d97c66d97eabf.jpg" alt="Caixa Rápida no WhatsApp" class="hero-img">
 
-    <section class="section-solucao">
-        <div class="container">
-            <h2 class="solucao-title">O PROTOCOLO "CAIXA RÁPIDA"</h2>
-            <p>Este não é um cursinho de vendas que vai tomar 20 horas da sua vida. Você não tem tempo para isso. O **Caixa Rápida no WhatsApp** é uma ferramenta de **Control C + Control V**.</p>
-            
-            <ul class="bullets">
-                <li><strong>O "Sanduíche de Preço" secreto:</strong> Como ancorar o valor na mente do cliente antes de dar o preço real (sem enganar ninguém).</li>
-                <li><strong>O Gatilho da Aversão à Perda:</strong> O roteiro exato para fazer o cliente parar de "pensar" e passar o cartão na mesma hora.</li>
-                <li><strong>O Efeito Zeigarnik:</strong> Como ressuscitar conversas mortas há dias sem parecer chato ou desesperado por dinheiro.</li>
-                <li><strong>Engenharia de Prompt:</strong> Bônus de IA com o código exato para você jogar no ChatGPT e criar ofertas infinitas.</li>
-            </ul>
-        </div>
-    </section>
+    <div class="alert-box">
+      <strong>A Ciência do Vácuo Comercial:</strong> Enviar apenas o preço seco ativa a ínsula anterior no cérebro do cliente — a mesma área da dor física real. O protocolo ensina a desarmar esse alarme biológico antes de falar valores.
+    </div>
 
-    <section class="section-oferta" id="comprar">
-        <div class="container">
-            <h2>Libere o seu acesso imediato</h2>
-            <p>Se um único roteiro deste guia salvar uma venda hoje, ele já se pagou múltiplas vezes.</p>
-            
-            <div style="margin: 30px 0;">
-                <p class="preco-ancora">De R$ 97,00 por apenas:</p>
-                <h1 class="preco-real">R$ 19,90</h1>
-                <p>ou 2x no cartão de crédito.</p>
-            </div>
+    <div class="content-card">
+      <h2>O que você recebe no Protocolo Executivo:</h2>
+      <ul class="feature-list">
+        <li><span class="check">✓</span> <div><strong>Fase 01 (Abordagem com Micro-Compromisso):</strong> A pergunta de escolha dupla (Situação A x B) que aumenta em 40% o avanço da negociação.</div></li>
+        <li><span class="check">✓</span> <div><strong>Fase 02 (O Sanduíche de Valor & Ancoragem):</strong> Como apresentar o preço para que ele seja percebido como lucro e economia imediata.</div></li>
+        <li><span class="check">✓</span> <div><strong>Fase 03 (Blindagem Contra Objeções):</strong> Roteiros para desarmar o "achei caro" (fracionamento de dor) e o "vou pensar" (aversão à perda).</div></li>
+        <li><span class="check">✓</span> <div><strong>Fase 04 (Ressurreição de Leads de 48h):</strong> O Efeito Zeigarnik e a abordagem de Culpa Reversa para reatar contatos sumidos sem ser invasivo.</div></li>
+        <li><span class="check">✓</span> <div><strong>Bônus de IA:</strong> Prompt de Engenharia de Comando para ChatGPT gerar respostas personalizadas para qualquer nicho em 30 segundos.</div></li>
+      </ul>
 
-            <a href="https://pay.kiwify.com.br/BytTjJE" class="cta-btn">QUERO ACESSAR OS ROTEIROS AGORA</a>
+      <div class="price-box">
+        <div class="old-price">De R$ 67,00 por apenas</div>
+        <div class="new-price">R$ 19,90</div>
+        <div class="price-sub">Pagamento único via Pix ou Cartão • Acesso imediato em PDF</div>
+      </div>
 
-            <div class="garantia">
-                <strong>🛡️ Risco Absolutamente Zero!</strong>
-                <p>Você tem 7 dias de garantia incondicional. Se você copiar, colar os roteiros e não sentir que suas conversas melhoraram, devolvemos 100% do seu dinheiro com 1 clique. Você não perde nada.</p>
-            </div>
-        </div>
-    </section>
+      <!-- LINK OFICIAL DO CHECKOUT KIWIFY -->
+      <a href="https://pay.kiwify.com.br/BytTjJE" class="btn-checkout" target="_blank" rel="noopener">
+        QUERO O PROTOCOLO POR R$ 19,90
+      </a>
 
-    <footer style="text-align: center; padding: 20px; font-size: 0.9rem; color: #888;">
-        <p>Este site não faz parte do Facebook Inc. ou Google Inc.</p>
-        <p>&copy; 2026 Caixa Rápida no WhatsApp. Todos os direitos reservados.</p>
-    </footer>
+      <div class="footer-guarantee">
+        <span>🔒</span> Pagamento Seguro via Kiwify • Garantia Incondicional de 7 Dias
+      </div>
 
+      <div class="author-info">
+        Desenvolvido por Felipe Borges Linares<br>
+        Suporte oficial: feblinares@gmail.com
+      </div>
+    </div>
+  </div>
 </body>
 </html>
